@@ -222,7 +222,7 @@
 				line-height: 10px;
 			}
 
-
+.out{color:grey;}
 
 		</style>
  
@@ -246,14 +246,14 @@
 
 
 
-					<h3>Use the Slider to display the year</h3>
-					<label id="yearslide"></label>
+					<h3 class="slide">Use the Slider to display the year</h3>
+					<label id="yearslide" class="slide"></label>
 					<input id="slider" type="range" min="1970" max="2020" step="1" value="0" />
 
-					<h3>Autoplay Time</h3>
+					<h3 class="plays">Autoplay Time</h3>
 					<label id="year"></label>
 					<input type="button" id="play" value="Play" />
-					<input type="button" id="stop" value="Reset" />
+					<input type="button" id="stop" value="Pause " />
 
 					<div id = "legend">
 						<div id ="legend-orange"></div> <span> = Planungszelle </span></br>
@@ -280,7 +280,7 @@
 
 
 			// »MINI CMS«
-			let fileUrl = 'https://raw.githubusercontent.com/Labor-K/mini-publics/master/mini-publics-cms.csv'
+			let fileUrl = 'https://raw.githubusercontent.com/sfb1265/mini-publics/main/mini-publics-cms.csv'
 			Papa.parse(fileUrl, {
         			download: true,
 					header: true,
@@ -395,7 +395,7 @@
 			//Load Map and clean Data-Set for Empty Fields
 			map.on('load', function () {
 				d3.json(
-				'https://raw.githubusercontent.com/Labor-K/mini-publics/master/map_c.geojson', function (err, data) {
+				'https://raw.githubusercontent.com/sfb1265/mini-publics/main/map_c.json', function (err, data) {
 					if (err) throw err;
 					data.features = data.features.map(function (d) {
 						d.properties.newstartdate = new Date(d.properties.startdate).getFullYear();
@@ -489,19 +489,33 @@
 					function LoopIt(){ var myInterval = window.setInterval(function() { 
 						let currentYear = advanceYear();
 						filterBy(parseInt(currentYear));
-						console.log("currentYear "+currentYear)
 						$('#play').toggleClass("activated")
+						$("#slider").slider('value',0);
 					}, 1000);
+					$('.slide').toggleClass("out")
+					$('.plays').removeClass("out")
+
+
+
+
+					
 
 					function Exit(){
-						filterBy(parseInt(1970));
+						// filterBy(parseInt(1970));
 						clearInterval(myInterval);
 						$('#play').removeClass("activated")
+						$('.slide').removeClass("out")
+						$('.plays').addClass("out")
+
 					}
+
+
+					function Outs(){$('#slide').toggleClass("out")}
+
 
 					document.getElementById('stop').addEventListener('click', Exit);
 					}
-					document.getElementById('play').addEventListener('click', LoopIt);
+					document.getElementById('play').addEventListener('click', LoopIt)
 
 
 
