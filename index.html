@@ -466,8 +466,8 @@
 							if (d.properties.format == null){
 								d.properties.format='';
 							}
-							if (d.properties.isssue == null){
-								d.properties.isssue='';
+							if (d.properties.issue == null){
+								d.properties.issue='';
 							}
 							if (d.properties.implorg == null){
 								d.properties.implorg='';
@@ -602,7 +602,7 @@
 						var end = e.features[0].properties.enddate;
 						var where = e.features[0].properties.localisation;
 						var format = e.features[0].properties.format;
-						var isssue = e.features[0].properties.isssue;
+						var issue = e.features[0].properties.issue;
 						var impl = e.features[0].properties.implorg;
 						var autho = e.features[0].properties.contrautho;
 						var source = e.features[0].properties.sources;
@@ -612,7 +612,7 @@
 						if(end === ''){popup_content_end = "hide" }
 						if(where === ''){popup_content_where = "hide" }
 						if(format === ''){popup_content_format = "hide" }
-						if(isssue === ''){popup_content_issue = "hide" }
+						if(issue === ''){popup_content_issue = "hide" }
 						if(impl === ''){popup_content_impl = "hide" }
 						if(autho === ''){popup_content_autho = "hide" }
 						if(source === ''){popup_content_source = "hide" }
@@ -665,8 +665,8 @@
 								'<li>' + 'part of a larger project: ' + '<b>' + partof + '</b>' + '</li>' +
 								'<li id='+popup_content_begin+'>' + 'time: ' + '<b>' + begin + '</b>' + '<span id='+ popup_content_end +'>' + ' &#8212; ' + '<b>' + end + '</b>' + '</span>' +'</li>' +
 								'<li id='+popup_content_where+'>' + 'in: ' + '<b>' + where + '</b>' + '</li>' +
-								'<li id='+popup_content_issue+'>' + 'format: ' + '<b>' + format + '</b>' + '</li>' + 
-								'<li id='+popup_content_issue+'>' + 'issue: ' + '<b>' + isssue + '</b>' + '</li>' +
+								'<li id='+popup_content_format+'>' + 'format: ' + '<b>' + format + '</b>' + '</li>' + 
+								'<li id='+popup_content_issue+'>' + 'issue: ' + '<b>' + issue + '</b>' + '</li>' +
 								'<li id='+popup_content_impl+'>' + 'implementing organisation: ' + '<b>' + impl + '</b>' + '</li>' +
 								'<li id='+popup_content_autho+'>' + 'contracting authority organisation: ' + '<b>' + autho + '</b>' + '</li>' +
 								'<li id='+popup_content_source+'>' + '<p class="small_desc">'+ "source: " + source + '</p>' + '</li>' +
