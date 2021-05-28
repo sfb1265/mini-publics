@@ -493,7 +493,7 @@
 						'paint': {
 							'circle-color': [
 								'match',
-								['get', 'categorited format'],
+								['get', 'cat-format'],
 
 
 								/* COLORS TO BE DEFINED */
@@ -507,7 +507,7 @@
 								'#5AC18E',
 								'World Wide Views',
 								'#6978C9',
-								'Shimin togikai',
+								'Shimin Togikai',
 								'#000000',
 								"Citizens' Assembly",
 								'#e4141c',
@@ -599,7 +599,6 @@
 
 						let coordinates = e.features[0].geometry.coordinates.slice();
 						var title = e.features[0].properties.eventtitle;
-						// part_of_a_larger project -> 
 						var partof = e.features[0].properties.partof;
 						var begin = e.features[0].properties.startdate;
 						var end = e.features[0].properties.enddate;
