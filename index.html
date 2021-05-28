@@ -305,7 +305,7 @@
 						<div id ="legend-cj"></div> <span> = Citizens Jury</span></br>
 						<div id ="legend-dp"></div> <span> = Deliberative Poll</span></br>
 						<div id ="legend-wwv"></div> <span> = World Wide Views</span></br>
-						<div id ="legend-st"></div> <span> = Shimin togikai</span></br>
+						<div id ="legend-st"></div> <span> = Shimin Togikai</span></br>
 						<div id ="legend-ca"></div> <span> = Citizens' Assembly</span></br>
 						<div id ="legend-cir"></div> <span> = Citizens' Initiative Review</span></br>
 
@@ -475,8 +475,8 @@
 								d.properties.implorg='';
 							}
 
-							if (d.properties.source == null){
-								d.properties.source='';
+							if (d.properties.sources == null){
+								d.properties.sources='';
 							}
 
 						return d;
@@ -607,7 +607,7 @@
 						var isssue = e.features[0].properties.isssue;
 						var impl = e.features[0].properties.implorg;
 						var autho = e.features[0].properties.contrautho;
-						var source = e.features[0].properties.source;
+						var source = e.features[0].properties.sources;
 						var theId = e.features[0].properties.ID;
 
 						if(begin === ''){popup_content_begin = "hide" }
