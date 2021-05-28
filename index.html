@@ -30,6 +30,7 @@
 				left: 0;
 				padding: 10px;
 				overflow-y: scroll;
+				z-index: 9999999999999999;
 
 			}
 
@@ -162,27 +163,69 @@
 			#legend{
 				margin-top: 5%;
 			}
+		
 
-			#legend-orange{
+
+
+
+
+
+			#legend-pz{
 				height: 10px;
   				width: 10px;
   				background-color: #fbb03b;
 				display: inline-block;
 			}
 
-			#legend-red{
+			#legend-cc{
 				height: 10px;
   				width: 10px;
   				background-color: #F08080;
 				display: inline-block;
 			}
 
-			#legend-green{
+			#legend-cj{
+				height: 10px;
+  				width: 10px;
+  				background-color: #005FAA;
+				display: inline-block;
+			}
+
+			#legend-dp{
 				height: 10px;
   				width: 10px;
   				background-color: #5AC18E;
 				display: inline-block;
 			}
+
+			#legend-wwv{
+				height: 10px;
+  				width: 10px;
+  				background-color: #6978C9;
+				display: inline-block;
+			}
+
+			#legend-st{
+				height: 10px;
+  				width: 10px;
+  				background-color: #000000;
+				display: inline-block;
+			}
+
+			#legend-ca{
+				height: 10px;
+  				width: 10px;
+  				background-color: #e4141c;
+				display: inline-block;
+			}
+
+			#legend-cir{
+				height: 10px;
+  				width: 10px;
+  				background-color: #904218;
+				display: inline-block;
+			}
+
 
 			#legend-other{
 				height: 10px;
@@ -194,9 +237,10 @@
 			#legend-nd{
 				height: 10px;
   				width: 10px;
-  				background-color: #000000;
+  				background-color: #888888;
 				display: inline-block;
 			}
+
 
 			/* POPUP */
 
@@ -256,9 +300,15 @@
 					<input type="button" id="stop" value="Pause " />
 
 					<div id = "legend">
-						<div id ="legend-orange"></div> <span> = Planungszelle </span></br>
-						<div id ="legend-red"></div> <span> = Consensus Conference</span></br>
-						<div id ="legend-green"></div> <span> = Deliberative Poll</span></br>
+						<div id ="legend-pz"></div> <span> = Planungszelle </span></br>
+						<div id ="legend-cc"></div> <span> = Consensus Conference</span></br>
+						<div id ="legend-cj"></div> <span> = Citizens Jury</span></br>
+						<div id ="legend-dp"></div> <span> = Deliberative Poll</span></br>
+						<div id ="legend-wwv"></div> <span> = World Wide Views</span></br>
+						<div id ="legend-st"></div> <span> = Shimin togikai</span></br>
+						<div id ="legend-ca"></div> <span> = Citizens' Assembly</span></br>
+						<div id ="legend-cir"></div> <span> = Citizens' Initiative Review</span></br>
+
 						<div id ="legend-other"></div> <span> = Other</span></br>
 						<div id ="legend-nd"></div> <span> = Not defined</span></br></br>
 						<span id="version"> Last updated: </span>
@@ -395,7 +445,7 @@
 			//Load Map and clean Data-Set for Empty Fields
 			map.on('load', function () {
 				d3.json(
-				'https://raw.githubusercontent.com/sfb1265/mini-publics/main/map_c.json', function (err, data) {
+				'https://raw.githubusercontent.com/Labor-K/mini-publics/master/map_d_b.geojson', function (err, data) {
 					if (err) throw err;
 					data.features = data.features.map(function (d) {
 						d.properties.newstartdate = new Date(d.properties.startdate).getFullYear();
@@ -444,16 +494,29 @@
 							'circle-color': [
 								'match',
 								['get', 'categorited format'],
+
+
 								/* COLORS TO BE DEFINED */
 								'Planungszelle',
 								'#fbb03b',
 								'Consensus Conference',
 								'#F08080',
+								'Citizens Jury',
+								'#005FAA',
 								'Deliberative Poll',
 								'#5AC18E',
+								'World Wide Views',
+								'#6978C9',
+								'Shimin togikai',
+								'#000000',
+								"Citizens' Assembly",
+								'#e4141c',
+								"Citizens' Initiative Review",	
+								'#904218',
 								"other",
 								'#3bb2d0',
-								/* all other categories */ '#000000'
+								/* all other categories */ 
+								'#888888'
 							]
 						}
 					});
