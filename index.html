@@ -468,8 +468,8 @@
 							if (d.properties.localisation ==null){
 								d.properties.localisation='';
 							}
-							if (d.properties.contrautho == null){
-								d.properties.contrautho='';
+							if (d.properties.contracting_entities == null){
+								d.properties.contracting_entities='';
 
 							}
 							if (d.properties.format == null){
@@ -613,7 +613,7 @@
 						var format = e.features[0].properties.format;
 						var issue = e.features[0].properties.issue;
 						var impl = e.features[0].properties.implorg;
-						var autho = e.features[0].properties.contrautho;
+						var autho = e.features[0].properties.contracting_entities;
 						var source = e.features[0].properties.sources;
 						var theId = e.features[0].properties.ID;
 
@@ -655,7 +655,7 @@
 								'format: ' + '<b>' + format + '</b>' + '<br>' +
 								'issue: ' + '<b>' + isssue + '</b>' + '<br>' +
 								'implementing organisation: ' + '<b>' + impl + '</b>' + '<br>' +
-								'<p id='+myClass+'>'+'contracting authority organisation: ' + '<b>' + autho + '</b>' + '<br>'+'</div>' + '</p>' +
+								'<p id='+myClass+'>'+'contracting entity: ' + '<b>' + autho + '</b>' + '<br>'+'</div>' + '</p>' +
 								'</p>'+
 								'<p>'+ "source: " + source
 								
