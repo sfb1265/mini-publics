@@ -452,7 +452,7 @@
 			//Load Map and clean Data-Set for Empty Fields
 			map.on('load', function () {
 				d3.json(
-				'https://raw.githubusercontent.com/sfb1265/mini-publics/main/map_f.geojson', function (err, data) {
+				'https://raw.githubusercontent.com/sfb1265/mini-publics/main/map_g.geojson', function (err, data) {
 					if (err) throw err;
 					data.features = data.features.map(function (d) {
 						d.properties.newstartdate = new Date(d.properties.startdate).getFullYear();
